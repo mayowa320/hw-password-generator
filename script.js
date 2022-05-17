@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+// this variable contains all of the possible uppercase characters
 var upperCase = [
   "A",
   "B",
@@ -30,6 +31,7 @@ var upperCase = [
   "Y",
   "Z",
 ];
+// this variable contains all possible lowercase characters
 var lowerCase = [
   "a",
   "b",
@@ -58,10 +60,12 @@ var lowerCase = [
   "y",
   "z",
 ];
+// variables for all possible special characters and all possible numbers
 var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+// prompts for password parameters
 function generatePassword() {
-  var length = prompt("password length");
+  var length = prompt("password length?");
   var hasSpecial = confirm("would you like to include special characters?");
   var hasNumber = confirm("got numbers?");
   var hasUpper = confirm("any uppercase characters?");
@@ -73,6 +77,7 @@ function generatePassword() {
     passwordArray;
   }
 }
+// determining if criteria is met
 function validate(length, hasSpecial, hasNumber, hasUpper, hasLower) {
   var isValid = true;
   if (length < 8 || length > 128) {
